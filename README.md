@@ -43,21 +43,24 @@ Things you may want to cover:
 |group_name    |string |null: false  |
 
 > Association
-> - has_many: users
-> - has_many: messages
+> - has_many :members
+> - has_many :users, :through => :members
+> - has_many :messages
 
 * usersテーブル
 
-|Column| Type   | Options                   |
-|------|--------|---------------------------|
-|name  | string | null: false, unique: true |
-|email | string | null: flase, unique: true |
+|Column  | Type   | Option                    |
+|--------|--------|---------------------------|
+|name    | string | null: false, unique: true |
+|email   | string | null: flase, unique: true |
+|password|varchar | null: false, unique: true |
 
 > - add_index: usersテーブル, [:name, :email]
 
-> Assciasion
-> - belongs_to: group
-> - has_many: messages
+> Associasion
+> - has_many :members
+> - has_many :groups, :trough => :members
+> - has_many :messages
 
 * messageテーブル
 
@@ -69,5 +72,5 @@ Things you may want to cover:
 |user_id | integer | null: false, foreign_key: true|
 
 > Association
-> - belongs_to: users
-> - belongs_to: groups
+> - belongs_to :users
+> - belongs_to :groups
