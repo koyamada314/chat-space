@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+##DB設計
+
+* membersテーブル
+
+| Column | Type  | Options                      |
+|--------|-------|------------------------------|
+|user_id |integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+> Associationテーブル
+> - belongs_to :group
+> - belongs_to :user
