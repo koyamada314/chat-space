@@ -1,0 +1,46 @@
+.html{
+	height:100%;
+}
+
+.body{
+	height: 100%;
+}
+
+.left-menu{
+  float:left;
+  background-color: #2f3e51;
+  width:300px;
+  height: 100vh;
+  &__user{
+  	background-color: #253141;
+  	height: 105px;
+    margin-bottom: 20px;
+    position: relative;
+  	.user__name{
+  	  margin: 0 20px 0;
+  	  font-size: 16px;
+  	  font-weight: bold;
+  	  color: #FFFFFF;
+  	  line-height: 105px;
+  	  vertical-align: middle;
+  	}
+    .user__header{
+      color: #FFFFFF;
+      position: absolute;right: 20px; top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .left-menu__group{
+  	height:71px;
+    .left-menu__group__name{
+      font-size:15px;
+      color: #FFFFFF;
+      margin: 0px 20px 5px;
+    }
+    .left-menu__group__text{
+      font-size: 11px;
+      color: #FFFFFF;
+      margin: 0px 20px 40px;
+    }
+  }
+}
