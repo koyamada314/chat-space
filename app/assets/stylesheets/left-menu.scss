@@ -1,45 +1,37 @@
-.html{
-	height:100%;
-}
-
-.body{
-	height: 100%;
-}
-
 .left-menu{
   float:left;
-  background-color: #2f3e51;
+  background-color: $color-ultramarin;
   width:300px;
   height: 100vh;
   &__user{
-  	background-color: #253141;
+  	background-color: $color-darkmarin;
   	height: 105px;
     margin-bottom: 20px;
     position: relative;
-  	.user__name{
+  	&__name{
   	  margin: 0 20px 0;
   	  font-size: 16px;
   	  font-weight: bold;
-  	  color: #FFFFFF;
+  	  color: $color-white;
   	  line-height: 105px;
   	  vertical-align: middle;
   	}
-    .user__header{
-      color: #FFFFFF;
+    &__header{
+      color: $color-white;
       position: absolute;right: 20px; top: 50%;
       transform: translateY(-50%);
     }
   }
-  .left-menu__group{
+  &__group{
   	height:71px;
-    .left-menu__group__name{
+    &__name{
       font-size:15px;
-      color: #FFFFFF;
+      color: $color-white;
       margin: 0px 20px 5px;
     }
-    .left-menu__group__text{
+    &__text{
       font-size: 11px;
-      color: #FFFFFF;
+      color: $color-white;
       margin: 0px 20px 40px;
     }
   }
