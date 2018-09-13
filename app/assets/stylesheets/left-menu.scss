@@ -1,0 +1,38 @@
+.left-menu{
+  float:left;
+  background-color: $color-ultramarin;
+  width:300px;
+  height: 100vh;
+  &__user{
+  	background-color: $color-darkmarin;
+  	height: 105px;
+    margin-bottom: 20px;
+    position: relative;
+  	&__name{
+  	  margin: 0 20px 0;
+  	  font-size: 16px;
+  	  font-weight: bold;
+  	  color: $color-white;
+  	  line-height: 105px;
+  	  vertical-align: middle;
+  	}
+    &__header{
+      color: $color-white;
+      position: absolute;right: 20px; top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__group{
+  	height:71px;
+    &__name{
+      font-size:15px;
+      color: $color-white;
+      margin: 0px 20px 5px;
+    }
+    &__text{
+      font-size: 11px;
+      color: $color-white;
+      margin: 0px 20px 40px;
+    }
+  }
+}
