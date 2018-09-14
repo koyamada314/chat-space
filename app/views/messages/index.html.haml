@@ -1,57 +1,54 @@
-%body
-  / %div.notice
-  /   %p.notice__text
-  /     チャットグループが作成されました
-  .left-menu
-    .left-menu__user
-      .left-menu__user__name
-        User
-      .left-menu__user__header
-        =link_to '',class: 'user__header__create-chat', style: "color: white; text-decoration: none;" do
-          %i.fa.fa-pencil-square-o.icon
-        =link_to '', class: 'user__header__user-setting', style: "color: white" do
-          %i.fa.fa-cog.icon
-      / left-menu__group~textまでは後でレンダリングファイル化
-    .left-menu__group
-      %p.left-menu__group__name
-        グループネームサンプル
-      %p.left-menu__group__text
-        グループテキストサンプル
-    .left-menu__group
-      %p.left-menu__group__name
-        グループネームサンプル2
-      %p.left-menu__group__text
-        グループテキストサンプル2
-  .chat
-    .chat__team
-      .chat__team__title
-        仮置きグループ名
-      .chat__team__button-box
-        =button_to 'Edit', '', class: 'edit-button'
-      .chat__team__member
-        仮置きメンバー名
-        / chat__area~stringは後でレンダリングファイル化
-    .chat__area
-      .chat__area__head
-        %a.chat__area__head__name
-          ユーザー1
-        %a.chat__area__head__time
-          2018/09/10
-      %p.chat__area__string
-        テスト
-    .chat__area
-      .chat__area__head
-        %a.chat__area__head__name
-          ユーザー２
-        %a.chat__area__head__time
-          2018/09/10
-      %p.chat__area__string
-        テスト2
-      .chat__area__bottom
-        .chat__area__bottom__box
-          %p.chat__area__bottom__box__text
-            仮置きテキストテキストテキストテキストテキストテキストテキストテ
-          .chat__area__bottom__box__icon
-            = link_to '',class: 'chat__area__button__box__icon__pic',style: 'color: black' do
-              %i.fa.fa-picture-o.icon
-        =button_to 'Send', '',class: 'send-button'
+メッセージindex
+/ .left-menu
+/   .left-menu__user
+/     .left-menu__user__name
+/       = current_user.name
+/     .left-menu__user__header
+/       =link_to '',class: 'user__header__create-chat', style: "color: white; text-decoration: none;" do
+/         %i.fa.fa-pencil-square-o.icon
+/       =link_to edit_user_path(current_user), class: 'user__header__user-setting', style: "color: white" do
+/         %i.fa.fa-cog.icon
+/       / left-menu__group~textまでは後でレンダリングファイル化
+/   .left-menu__group
+/     %p.left-menu__group__name
+/       グループネームサンプル
+/     %p.left-menu__group__text
+/       グループテキストサンプル
+/   .left-menu__group
+/     %p.left-menu__group__name
+/       グループネームサンプル2
+/     %p.left-menu__group__text
+/       グループテキストサンプル2
+/ .chat
+/   .chat__team
+/     .chat__team__title
+/       仮置きグループ名
+/     .chat__team__button-box
+/       =button_to 'Edit', '', class: 'edit-button'
+/     .chat__team__member
+/       仮置きメンバー名
+/       / chat__area~stringは後でレンダリングファイル化
+/   .chat__area
+/     .chat__area__head
+/       %a.chat__area__head__name
+/         ユーザー1
+/       %a.chat__area__head__time
+/         2018/09/10
+/     %p.chat__area__string
+/       テスト
+/   .chat__area
+/     .chat__area__head
+/       %a.chat__area__head__name
+/         ユーザー２
+/       %a.chat__area__head__time
+/         2018/09/10
+/     %p.chat__area__string
+/       テスト2
+/     .chat__area__bottom
+/       .chat__area__bottom__box
+/         %p.chat__area__bottom__box__text
+/           仮置きテキストテキストテキストテキストテキストテキストテキストテ
+/         .chat__area__bottom__box__icon
+/           = link_to '',class: 'chat__area__button__box__icon__pic',style: 'color: black' do
+/             %i.fa.fa-picture-o.icon
+/       =button_to 'Send', '',class: 'send-button'
