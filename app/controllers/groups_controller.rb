@@ -1,32 +1,46 @@
 class GroupsController < ApplicationController
 
+  before_action :set_group, only: [:edit, :update]
+
   def index
+    @groups = Group.order('created_at DESC')
+    # @message = @group.message.find(1).limit(1)
   end
 
-  def cerate
-  	Group.cerate(group_name: group_params[:group_name], user_id: current_user.id)
+  def create
+  	@group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, notice: 'グループを作成しました'
+    else
+      render :new
+    end
   end
 
   def new
   	@group = Group.new
+    @group.users << current_user
   end
 
-  def edit
-    @group = Group.find(params[:id])
-  end
+  # def edit
+  #   @group = Group.find(params[:id])
+  # end
 
   def update
-  	group = Group.find(prams[:id])
-  	if group.user_id = current_user.id
-  		group.update(group_params)
-  	end
-  	redirect_to :index
+  	if @group.update(group_params)
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+    else
+      render :edit
+    end
   end
 
 
   private
   def group_params
-  	params.require(:group).permit(:group_name)
+  	params.require(:group).permit(:group_name, {:user_ids => []})
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 
 end

@@ -7,17 +7,10 @@
         %i.fa.fa-pencil-square-o.icon
       =link_to edit_user_path(current_user), class: 'user__header__user-setting', style: "color: white" do
         %i.fa.fa-cog.icon
-      / left-menu__group~textまでは後でレンダリングファイル化
-  .left-menu__group
-    %p.left-menu__group__name
-      グループネームサンプル
-    %p.left-menu__group__text
-      グループテキストサンプル
-  .left-menu__group
-    %p.left-menu__group__name
-      グループネームサンプル2
-    %p.left-menu__group__text
-      グループテキストサンプル2
+
+  - current_user.groups.each do |group|
+    = render partial: "each_group", locals: { group: group }
+
 .chat
   .chat__team
     .chat__team__title
