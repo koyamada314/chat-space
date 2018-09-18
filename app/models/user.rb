@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :group_users
   has_many :groups, through: :group_users
+  has_many :messages
 
 # 　以下は実験としてつけました
 # ユーザー情報編集画面でもnameの空白を弾く

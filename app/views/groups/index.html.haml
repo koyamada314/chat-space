@@ -11,36 +11,37 @@
   - current_user.groups.each do |group|
     = render partial: "each_group", locals: { group: group }
 
-.chat
-  .chat__team
-    .chat__team__title
-      仮置きグループ名
-    .chat__team__button-box
-      =button_to 'Edit', '', class: 'edit-button'
-    .chat__team__member
-      仮置きメンバー名
-      / chat__area~stringは後でレンダリングファイル化
-  .chat__area
-    .chat__area__head
-      %a.chat__area__head__name
-        ユーザー1
-      %a.chat__area__head__time
-        2018/09/10
-    %p.chat__area__string
-      テスト
-  .chat__area
-    .chat__area__head
-      %a.chat__area__head__name
-        ユーザー２
-      %a.chat__area__head__time
-        2018/09/10
-    %p.chat__area__string
-      テスト2
-    .chat__area__bottom
-      .chat__area__bottom__box
-        %p.chat__area__bottom__box__text
-          仮置きテキストテキストテキストテキストテキストテキストテキストテ
-        .chat__area__bottom__box__icon
-          = link_to '',class: 'chat__area__button__box__icon__pic',style: 'color: black' do
-            %i.fa.fa-picture-o.icon
-      =button_to 'Send', '',class: 'send-button'
+/ .chat
+/   .chat__team
+/     .chat__team__title
+/       仮置きグループ名
+/     .chat__team__button-box
+/       =button_to 'Edit', '', class: 'edit-button'
+/     .chat__team__member
+/       仮置きメンバー名
+/       / chat__area~stringは後でレンダリングファイル化
+/   .chat__area
+/     .chat__area__head
+/       %a.chat__area__head__name
+/         ユーザー1
+/       %a.chat__area__head__time
+/         2018/09/10
+/     %p.chat__area__string
+/       テスト
+/   .chat__area
+/     .chat__area__head
+/       %a.chat__area__head__name
+/         ユーザー２
+/       %a.chat__area__head__time
+/         2018/09/10
+/     %p.chat__area__string
+/       テスト2
+/     .chat__area__bottom
+/       .form
+/           = form_for [@group, @message] do |f|
+/             = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+/             .form__mask
+/               = f.label :image, class: 'form__mask__image' do
+/                 = fa_icon 'picture-o', class: 'icon'
+/                 = f.file_field :image, class: 'hidden'
+/             = f.submit 'Send', class: 'form__submit'
