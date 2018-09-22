@@ -2,11 +2,8 @@ class GroupsController < ApplicationController
 
   before_action :set_group, only: [:edit, :update]
 
-  after_action :new
-
   def index
     @groups = Group.order('created_at DESC')
-    # @message = @group.message.find(1).limit(1)
   end
 
   def create
