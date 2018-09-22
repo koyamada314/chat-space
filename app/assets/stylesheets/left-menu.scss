@@ -3,10 +3,11 @@
   background-color: $color-ultramarin;
   width:300px;
   height: 100vh;
+  position: relative;
   &__user{
   	background-color: $color-darkmarin;
   	height: 105px;
-    margin-bottom: 20px;
+    
     position: relative;
   	&__name{
   	  margin: 0 20px 0;
@@ -22,17 +23,22 @@
       transform: translateY(-50%);
     }
   }
-  &__group{
-  	height:71px;
-    &__name{
-      font-size:15px;
-      color: $color-white;
-      margin: 0px 20px 5px;
-    }
-    &__text{
-      font-size: 11px;
-      color: $color-white;
-      margin: 0px 20px 40px;
+  &__box{
+    width: 300px;
+    position: absolute;top: 125px;bottom:0px;
+    overflow: scroll;
+    &__group{
+    	height:71px;
+      &__name{
+        font-size:15px;
+        color: $color-white;
+        margin: 0px 20px 5px;
+      }
+      &__text{
+        font-size: 11px;
+        color: $color-white;
+        margin: 0px 20px 40px;
+      }
     }
   }
 }

@@ -1,0 +1,8 @@
+.chat__content__area
+  .chat__content__area__head
+    %a.chat__content__area__head__name
+      = message.user.name
+    %a.chat__content__area__head__time
+      = message.created_at
+  %p.chat__content__area__string
+    = message.body

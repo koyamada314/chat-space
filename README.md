@@ -25,7 +25,7 @@ Things you may want to cover:
 
 ## DB設計
 
-* membersテーブル
+* group_userテーブル
 
 | Column | Type  | Options                      |
 |--------|-------|------------------------------|
@@ -66,7 +66,7 @@ Things you may want to cover:
 
 |Column  |Type     |Option                         |
 |--------|---------|-------------------------------|
-|body    | text    | null: false                   |
+|body    | string  | null: false                   |
 |image   | string  |                               |
 |group_id| integer | null: false, foreign_key: true|
 |user_id | integer | null: false, foreign_key: true|

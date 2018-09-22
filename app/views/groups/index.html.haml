@@ -1,0 +1,12 @@
+.left-menu
+  .left-menu__user
+    .left-menu__user__name
+      = current_user.name
+    .left-menu__user__header
+      =link_to new_group_path,class: 'user__header__create-chat', style: "color: white; text-decoration: none;" do
+        %i.fa.fa-pencil-square-o.icon
+      =link_to edit_user_path(current_user), class: 'user__header__user-setting', style: "color: white" do
+        %i.fa.fa-cog.icon
+  .left-menu__box
+    - current_user.groups.each do |group|
+      = render partial: "groups/each_group", locals: { group: group }
