@@ -5,4 +5,9 @@
     %a.chat__content__area__head__time
       = message.created_at
   %p.chat__content__area__string
-    = message.body
+    - if message.body.present?
+      = message.body
+    - elsif message.image.present?
+      = image_tag message.image.url
+    - else
+      表示エラー
