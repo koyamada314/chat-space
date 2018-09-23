@@ -25,7 +25,7 @@
     - @messages.each do |message|
       = render partial: "each_messages", locals: {message: message}
 .form
-  = form_for [@group, @message] do |f|
+  = form_for [@group, @message], html:{id:'new__form'} do |f|
     = f.text_field :body, class: 'form__message', placeholder: 'type a message'
     .form__mask
       = f.label :image, class: 'form__mask__image' do
