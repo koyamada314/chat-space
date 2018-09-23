@@ -27,7 +27,7 @@ $(function(){
   	e.preventDefault();
     var sendbody = $('.form__message').val();
     var sendimage = $('.hidden').val();
-    if (sendbody.length || sendimage.length){ //変数化した画像ないしはテキストが存在するかの識別（.lengthは要素数をカウントするが、空の場合はnullになる挙動を利用して識別している）
+    if (sendbody || sendimage){     //変数化した画像ないしはテキストが存在するかの識別（.lengthは要素数をカウントするが、空の場合はnullになる挙動を利用して識別している）(.length必要なかったw)
     	var formData = new FormData(this);
     	var href = window.location.href;
       $.ajax({
