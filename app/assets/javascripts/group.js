@@ -18,30 +18,13 @@ $(function(){
       url: "/users",
       data: {keyword: input},     //indexアクションのkeywordカラムにinputを送る。moooviのサーチはhtmlでも出来たためview側にもname=>keywordが必要だったが今回は不要？
       dataType: 'json'
-    //   error : function(XMLHttpRequest, textStatus, errorThrown) {
-    //     console.log("ajax通信に失敗しました");
-    //     console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-    //     console.log("textStatus     : " + textStatus);
-    //     console.log("errorThrown    : " + errorThrown.message);
-    // },
-    // //ajax通信成功
-    // success : function(response) {
-    //     console.log("ajax通信に成功しました");
-    //     console.log(response);
-    // }
     })
     .done(function(users){
       $('#user-search-result').empty();
-      if (users.length !== 0 ){
-      	users.forEach(function(user){
-      	  var eachhtml = appendUser(user);
-          $('#user-search-result').append(eachhtml);
-      	});
-      }
-      else{
-      $('#user-search-result').empty();
-      $('#user-search-result').append('<p class= "no_user">ユーザーが存在しません</p>');
-      }
+      users.forEach(function(user){
+      	var eachhtml = appendUser(user);
+        $('#user-search-result').append(eachhtml);
+      });
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');
