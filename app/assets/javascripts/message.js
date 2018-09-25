@@ -54,7 +54,7 @@ $(function(){
      }
      else{
       alert('テキスト、または画像を入力してください');
-      location.href = window.location.href;  // アラートを消した後に一行下コードの発火を促すために何も送れてない際に現在のビューに遷移している
+      location.href = window.location.href;  // ア ラートを消した後に一行下コードの発火を促すために何も送れてない際に現在のビューに遷移している
       $(".form__submit").removeAttr("disabled");
      }
   });
