@@ -1,6 +1,7 @@
 $(function(){
   function appendUser(user){
-  var html = `<div id='chat-group-users'>
+  var html = `
+              <div id='chat-group-users'>
                 <div class='chat-group-user clearfix'>
                   <p class='chat-group-user__name'>${ user.name }</p>
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" id="add-data" data-user-id="${ user.id }" data-user-name="${ user.name}">追加</a>
@@ -31,7 +32,8 @@ $(function(){
     })
   });
   function addUser(username, userid){
-  	var addhtml = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  	var addhtml = `
+                   <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                     <input name='group[user_ids][]' type='hidden' value='${userid}'>
                     <p class='chat-group-user__name'>${username}</p>
                     <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id='${userid}' id='remove-button'>削除</a>

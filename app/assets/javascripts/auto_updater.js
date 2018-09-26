@@ -1,13 +1,15 @@
 $(function(){
   function  autoBuild(message){
     if (message.image !== null){
-    	var img = `<img src="${message.image}">`
+    	var img = `
+                 <img src="${message.image}">`
     }
     else{
       var img = ""
     }
 
-    var html = `<div class="chat__content__area" data-id="${ message.id }">
+    var html = `
+                <div class="chat__content__area" data-id="${ message.id }">
                   <div class="chat__content__area__head">
                     <a class="chat__content__area__head__name">${message.user}</a>
                     <a class="chat__content__area__head__time">${message.posted_time}</a>
@@ -21,7 +23,11 @@ $(function(){
     return html
   }
 
-  setInterval(function(e){
+  $(function(){
+    setInterval(autoUpdate,7000)
+  });
+
+  function autoUpdate(){
   	var thispage = window.location.href
     if( thispage.match(/^(?=.*groups)(?=.*messages)/)){   //正規表現記述(groups)と(messages)が両方存在する文字列にマッチ
       var message_id = $('.chat__content__area:last').data('id');
@@ -44,7 +50,6 @@ $(function(){
   	    alert('error');
   	  })
     }
-  },
-  7000);
+  }
 });
 
