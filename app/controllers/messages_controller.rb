@@ -5,6 +5,10 @@ class MessagesController < ApplicationController
   def index
   	@message = Message.new
     @messages = @group.messages.includes(:user)
+      respond_to do |format|
+        format.html
+        format.json { @newmessages = @group.messages.where('id > ?', params[:message][:id] ).includes(:user) }
+      end
   end
 
   def create

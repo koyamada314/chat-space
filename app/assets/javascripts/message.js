@@ -1,13 +1,15 @@
 $(function(){
   function buildHTML(message){
     if (message.image !== null) {
-      var img = `<img src="${message.image}">`
+      var img = `
+                 <img src="${message.image}">`
     }
     else{
       var img = ""
     }                                 //画像がある時のみ変数imgをhtmlとして生成。ない時は空値を挿入。同function内あるいは引数で取ってきた変数は${}で使えるので追加。
 　　　
-    var html =`<div class="chat__content__area">
+    var html =`
+                <div class="chat__content__area" data-id="${message.id}">
                       <div class="chat__content__area__head">
                         <a class="chat__content__area__head__name">
                         ${ message.user }
