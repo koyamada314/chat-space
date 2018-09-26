@@ -1,12 +1,8 @@
 $(function(){
   function  autoBuild(message){
-    if (message.image !== null){
-    	var img = `
-                 <img src="${message.image}">`
-    }
-    else{
-      var img = ""
-    }
+    var img =  (message.image !== null) ?
+    `<img src="${message.image}">` : "" ;
+
 
     var html = `
                 <div class="chat__content__area" data-id="${ message.id }">
@@ -24,12 +20,12 @@ $(function(){
   }
 
   $(function(){
-    setInterval(autoUpdate,7000)
+    setInterval(autoUpdate,10000)
   });
 
   function autoUpdate(){
-  	var thispage = window.location.href
-    if( thispage.match(/^(?=.*groups)(?=.*messages)/)){   //正規表現記述(groups)と(messages)が両方存在する文字列にマッチ
+    var thispage = window.location.href
+    if( thispage.match(/\/groups\/\d+\/messages/)){   //grouos+数字+messageeに一致するという正規表現。他に(/^(?=.*groups)(?=.*messages)/))で正規表現記述(groups)と(messages)が両方存在する文字列にマッチ
       var message_id = $('.chat__content__area:last').data('id');
   	  $.ajax({
         url:'messages',
@@ -48,7 +44,7 @@ $(function(){
       })
   	  .fail(function(){
   	    alert('error');
-  	  })
+  	　})
     }
   }
 });
