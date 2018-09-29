@@ -23,13 +23,16 @@
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
-    .chat-group-form__field--right
-      - @group.users.each do |user|
+    %div#member-list.chat-group-form__field--right
       #chat-group-users_a
-      = f.hidden_field :user_ids, value: user.id, multiple:true
+      - @group.users.each do |user|
         #chat-group-user-8.chat-group-user.clearfix.js-chat-member
           .chat-group-user__name
+          = f.hidden_field :user_ids, value: user.id, multiple:true
           = user.name
+          - if current_user != user
+            %a#remove-button.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id" => "user.id"} 削除
+
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

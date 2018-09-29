@@ -47,7 +47,8 @@ $(function(){
     $('#chat-group-users_a').append(addUser(username,userid));
     $(this).parent().remove();
   });
-  $('#chat-group-users_a').on('click', '#remove-button', function(e){
+  $('#member-list').on('click', '#remove-button', function(e){
+    console.log(this)
     $(this).parent().remove();
   });
 });

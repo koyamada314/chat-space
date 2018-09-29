@@ -20,15 +20,15 @@
     .chat__team__member
       - @users.each do |user|
         = user.name
-      / chat__area~stringは後でレンダリングファイル化
   .chat__content
     - @messages.each do |message|
       = render partial: "each_messages", locals: {message: message}
-.form
+.bottom-content
   = form_for [@group, @message], html:{id:'new__form'} do |f|
-    = f.text_field :body, class: 'form__message', placeholder: 'type a message'
-    .form__mask
-      = f.label :image, class: 'form__mask__image' do
-        = fa_icon 'picture-o', class: 'icon'
-        = f.file_field :image, class: 'hidden'
+    .form
+      = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'form__submit'
